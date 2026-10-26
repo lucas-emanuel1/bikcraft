@@ -1,15 +1,28 @@
+/* =================================== */
+/* Configurações Gerais */
+/* =================================== */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  height: 2000px;
 }
-ul {
+h1,
+ul,
+p {
   margin: 0;
-  padding: 0;
-  list-style: none;
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =================================== */
+/* Header */
+/* =================================== */
 .header-bg {
   background-color: #000;
 }
@@ -28,14 +41,15 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
-
+  padding: 0;
   a {
     position: relative;
     padding-block: 1rem;
     display: inline-block;
     color: #fff;
     font-size: 1.125rem;
-
+    font-family: "Poppins";
+    font-weight: 400;
     &:after {
       content: "";
       display: block;
@@ -63,18 +77,114 @@ a {
   }
   .header-menu {
     gap: .75rem;
-
     a {
       background-color: #111;
       padding: .75rem 1rem;
       border-radius: .25rem;
       font-size: .875rem;
-
       &:hover {
         background-color: #2e2e2e;
       }
       &:hover::after {
         display: none;
+      }
+    }
+  }
+}
+
+/* =================================== */
+/* Main */
+/* =================================== */
+.introducao-bg {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 -120px 0 0 #fff inset;
+}
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2.5rem;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-inline: 1.25rem;
+  margin-inline: auto;
+  .introducao-conteudo {
+    align-self: end;
+    padding-bottom: 200px;
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 4rem;
+      line-height: 1.125;
+      font-family: "Poppins";
+      font-weight: 600;
+      span {
+        color: #ffbb00;
+      }
+    }
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #b2b2b2;
+      font-family: "Roboto";
+      font-weight: 400;
+    }
+    a {
+      padding: 1rem 2rem;
+      background-color: blue;
+      display: inline-block;
+      background-image: linear-gradient(#ffbf00, #f2a50c);
+      border-radius: .25rem;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+      text-transform: uppercase;
+      color: #332200;
+      font-size: 1.125rem;
+      line-height: 1.33;
+      font-family: "Poppins";
+      font-weight: 600;
+      &:hover {
+        background-image: linear-gradient(#ffb60d, #e59317);
+      }
+    }
+  }
+  img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: .25rem;
+  }
+}
+
+@media (width < 1200px) {
+  .introducao .introducao-conteudo h1 {
+    font-size: 3rem;
+  }
+  .introducao .introducao-conteudo p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (width < 800px) {
+  .introducao-bg {
+    background-color: #111;
+    padding-top: 2.5rem;
+    box-shadow: 0 -60px 0 0 #fff inset;
+    .introducao {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      .introducao-conteudo {
+        padding-bottom: 0;
+          h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+          a {
+            padding: .75rem 1rem;
+            font-size: 1rem;
+          }
+      }
+      img {
+        height: 300px;
+        width: 100%;
       }
     }
   }
