@@ -9,10 +9,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 2.5rem;
-  box-sizing: border-box;
-  max-width: 1200px;
-  padding-inline: 1.25rem;
-  margin-inline: auto;
   .introducao-conteudo {
     align-self: end;
     padding-bottom: 200px;
